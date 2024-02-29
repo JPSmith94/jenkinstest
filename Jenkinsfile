@@ -1,15 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage("make directory"){
+        stage("List Directories"){
             steps{
-                sh "mkdir ~/jenkins-pipelines || true"
+                sh "ls"
             }
         }
-        stage("add some files"){
+        stage("Folder Location"){
             steps{
-                sh "touch ~/jenkins-pipelines/file.txt"
-                sh "ls -al"            
+                sh "pwd"            
+            }
+        }
+        stage("Echo Job"){
+            steps{
+                sh "run.sh"            
             }
         }
         
